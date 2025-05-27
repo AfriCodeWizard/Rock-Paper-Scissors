@@ -1,20 +1,20 @@
 let humanScore = 0;
-let computerScore = 0; // ✅ Fix typo: from `comupterScore` to `computerScore`
+let computerScore = 0; 
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
 }
-console.log(getComputerChoice());
+//console.log(getComputerChoice());
 
 function getHumanChoice() {
     const choice = prompt("Choose your weapon: rock, paper, or scissors");
     return choice.toLowerCase();
 }
-console.log(getHumanChoice());
+//console.log(getHumanChoice());
 
-function playRound(computerChoice, humanChoice) { // ✅ Fix typo: `computorChoice` to `computerChoice`
+function playRound(humanChoice, computerChoice) { 
     humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice === computerChoice) {
@@ -28,6 +28,12 @@ function playRound(computerChoice, humanChoice) { // ✅ Fix typo: `computorChoi
         humanScore += 1;
     } else {
         console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-        computerScore += 1; // ✅ Fix typo: from `comupterScore` to `computerScore`
+        computerScore += 1; 
     }
+    console.log(`Score → Human: ${humanScore} | Computer: ${computerScore}`);
+
 }
+const humanSelection = getHumanChoice(); 
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);

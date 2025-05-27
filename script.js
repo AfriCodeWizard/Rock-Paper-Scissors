@@ -1,5 +1,5 @@
-let humanScore = 0
-let comupterScore = 0
+let humanScore = 0;
+let computerScore = 0; // ✅ Fix typo: from `comupterScore` to `computerScore`
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -14,20 +14,20 @@ function getHumanChoice() {
 }
 console.log(getHumanChoice());
 
-function playRound(computorChoice, humanChoice) {
+function playRound(computerChoice, humanChoice) { // ✅ Fix typo: `computorChoice` to `computerChoice`
     humanChoice = humanChoice.toLowerCase();
 
-    if (humanChoice === computorChoice) {
-        console.log("We have a tie!")        
+    if (humanChoice === computerChoice) {
+        console.log("We have a tie!");
     } else if (
-        (humanChoice === "rock" && computorChoice === "scissors") ||
-        (humanChoice === "scissors") && computorChoice === "paper" ||
-        (humanChoice === "paper" && computorChoice === "rock")        
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "scissors" && computerChoice === "paper") ||
+        (humanChoice === "paper" && computerChoice === "rock")
     ) {
-        console.log( `You win! ${humanChoice} beats ${computerChoice}`);
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
         humanScore += 1;
     } else {
-        console.log(`You loose! ${computerChoice} beats ${humanChoice}`)
-        comupterScore += 1;    
-    }    
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        computerScore += 1; // ✅ Fix typo: from `comupterScore` to `computerScore`
+    }
 }

@@ -14,7 +14,7 @@ function getHumanChoice() {
 }
 console.log(getHumanChoice());
 
-function playGround(computorChoice, humanChoice) {
+function playRound(computorChoice, humanChoice) {
     humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice === computorChoice) {

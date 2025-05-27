@@ -14,7 +14,6 @@ This project is a great introduction to basic JavaScript concepts like:
 - DOM interaction (in future updates)
 
 ## How to Play
-
 1. Open your browser.
 2. Press `F12` or right-click and select **Inspect**, then go to the **Console** tab.
 3. Run the script and follow the prompts to play.

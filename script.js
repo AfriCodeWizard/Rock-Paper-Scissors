@@ -3,24 +3,26 @@ function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
 }
-//console.log(getComputerChoice());
-
-function getHumanChoice() {
-    const choice = prompt("Choose your weapon: rock, paper, or scissors");
-    return choice.toLowerCase();
-}
-//console.log(getHumanChoice());
-
 
     let humanScore = 0;
     let computerScore = 0; 
+    const resultEl = document.getElementById("roundResult");
+    const scoreEl = document.getElementById("score");
+    const buttons = document.querySelectorAll("button");
+
+
+
+    function endGame(winner) {
+        resultEl.textContent = winner === 'human' 
+            ? "🏆 You won the game! Congratulations!" 
+            : "💀 You lost the game! Better luck next time.";
+
+        buttons.forEach(button => button.disabled = true);
+    }
 
     function playRound(humanChoice, computerChoice) { 
         humanChoice = humanChoice.toLowerCase();
-
-        const resultEl = document.getElementById("roundResult");
-        const scoreEl = document.getElementById("score");
-    
+  
         if (humanChoice === computerChoice) {
             resultEl.textContent = "🤝We have a tie!";
         } else if (
@@ -35,24 +37,16 @@ function getHumanChoice() {
             computerScore += 1; 
         }
         scoreEl.textContent = `Score → Human: ${humanScore} | Computer: ${computerScore}`;
+
+        if (humanScore === 5) {
+            endGame('human');
+        } else if (computerScore === 5) {
+            endGame('computer');
+        }
     
     }
 
-   /** for (let i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice(); 
-        const computerSelection = getComputerChoice();
 
-        playRound(humanSelection, computerSelection);
-
-        if (humanScore > computerScore) {
-            console.log("You win the game!"); 
-        } else if (computerScore > humanScore) {
-            console.log("You lose the game!"); 
-        } else {
-            console.log("We have a tie!"); 
-        }
-    }
-**/
 
 function playGame() {
 

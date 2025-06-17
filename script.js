@@ -12,8 +12,6 @@ function getHumanChoice() {
 //console.log(getHumanChoice());
 
 
-function playGame() {
-
     let humanScore = 0;
     let computerScore = 0; 
 
@@ -37,7 +35,7 @@ function playGame() {
     
     }
 
-    for (let i = 0; i < 5; i++) {
+   /** for (let i = 0; i < 5; i++) {
         const humanSelection = getHumanChoice(); 
         const computerSelection = getComputerChoice();
 
@@ -51,6 +49,21 @@ function playGame() {
             console.log("We have a tie!"); 
         }
     }
+**/
+
+function playGame() {
+
+document.getElementById("rock").addEventListener("click", () => {
+  playRound("rock", getComputerChoice()); 
+});
+
+document.getElementById("paper").addEventListener("click", () => {
+    playRound("paper", getComputerChoice());
+});
+
+document.getElementById("scissors").addEventListener("click", () => {
+    playRound("scissors", getComputerChoice());
+});
 }
 
-playGame(); 
+playGame()

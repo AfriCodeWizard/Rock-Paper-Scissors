@@ -3,6 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <title>Rock Paper Scissors</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #1e3c72);
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }*
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.2em;
+    }
+
+    h2 {
+      font-weight: normal;
+      margin-bottom: 1em;
+    }
+
+    #buttonContainer {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: 2px solid black;
+      border-radius: 20px;
+      background-color: #ffcc00;
+      color: #333;
+      cursor: pointer;
+      margin: 0 20px; 
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ffa500;
+      transform: scale(1.1);
+    }
+
+    #results {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #roundResult {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    #score {
+      font-size: 1.2rem;
+    }
+
+    #playAgain {
+      margin-top: 20px;
+      display: none;
+      background-color: #00e676;
+      color: #fff;
+    }
+
+    #playAgain:hover {
+      background-color: #00c853;
+    }
+
+    @media (max-width: 600px) {
+      button {
+        padding: 10px 15px;
+        font-size: 1rem;
+      }
+s
+      #results {
+        width: 90%;
+      }
+    }
+ 
+  </style>
 </head>
 <body>
 
@@ -17,6 +109,9 @@
     <p id="roundResult"></p>
     <p id="score">Score → Human: 0 | Computer: 0</p>
   </div>
+
+  <button id="playAgain" style="display: none; margin-top: 15px;">🔁 Play Again</button>
+
   
 
   <script src="script.js"></script>

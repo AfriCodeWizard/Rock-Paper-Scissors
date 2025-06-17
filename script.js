@@ -17,21 +17,24 @@ function getHumanChoice() {
 
     function playRound(humanChoice, computerChoice) { 
         humanChoice = humanChoice.toLowerCase();
+
+        const resultEl = document.getElementById("roundResult");
+        const scoreEl = document.getElementById("score");
     
         if (humanChoice === computerChoice) {
-            console.log("We have a tie!");
+            resultEl.textContent = "🤝We have a tie!";
         } else if (
             (humanChoice === "rock" && computerChoice === "scissors") ||
             (humanChoice === "scissors" && computerChoice === "paper") ||
             (humanChoice === "paper" && computerChoice === "rock")
         ) {
-            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            resultEl.textContent = `🎉You win! ${humanChoice} beats ${computerChoice}`;
             humanScore += 1;
         } else {
-            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            resultEl.textContent = `😞You lose! ${computerChoice} beats ${humanChoice}`;
             computerScore += 1; 
         }
-        console.log(`Score → Human: ${humanScore} | Computer: ${computerScore}`);
+        scoreEl.textContent = `Score → Human: ${humanScore} | Computer: ${computerScore}`;
     
     }
 
